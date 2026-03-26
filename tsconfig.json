@@ -5,7 +5,7 @@
     "strict": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "types": ["node", "jest", "playwright"]
+    "types": ["node", "playwright"]
   },
   "include": ["tests/**/*.ts", "pages/**/*.ts", "utils/**/*.ts", "config/**/*.ts"]
 }
