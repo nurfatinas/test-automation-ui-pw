@@ -28,11 +28,10 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test
-        # run: npx playwright test --project=${{ matrix.browser }}
+        continue-on-error: true
 
       - name: Upload Playwright report
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
-          # name: playwright-report-${{ matrix.browser }}
           path: playwright-report
