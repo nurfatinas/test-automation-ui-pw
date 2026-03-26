@@ -1,0 +1,13 @@
+{
+  "name": "test_automation_pw",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.38.0",
+    "typescript": "^5.2.2"
+  }
+}
