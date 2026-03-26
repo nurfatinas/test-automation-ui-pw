@@ -1,5 +1,5 @@
 # Official Playwright image with browsers and dependencies
-FROM mcr.microsoft.com/playwright:v1.58.2-focal
+FROM mcr.microsoft.com/playwright:v1.58.2
 
 # Set working directory inside container
 WORKDIR /app
@@ -16,5 +16,5 @@ COPY . .
 # Compile TypeScript
 RUN npx tsc
 
-# Default command to run tests
+# Default command to run tests with HTML report
 CMD ["npx", "playwright", "test", "--reporter=html"]
