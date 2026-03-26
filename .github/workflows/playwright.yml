@@ -10,11 +10,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [Chromium, Firefox, WebKit]
-
     steps:
       - uses: actions/checkout@v4
 
@@ -25,7 +20,8 @@ jobs:
         env:
           BASE_URL: https://sauce-demo.myshopify.com/
           BROWSER: chromium
-        run: docker run --rm \
+        run: |
+          docker run --rm \
             -e BASE_URL=$BASE_URL \
             -e BROWSER=$BROWSER \
             test-automation-ui-pw \
@@ -35,5 +31,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-report
-          path: artifacts/
+          name: playwright-report
+          path: playwright-report-chromium/
