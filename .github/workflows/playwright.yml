@@ -24,6 +24,7 @@ jobs:
           docker run --rm \
             -e BASE_URL=$BASE_URL \
             -e BROWSER=$BROWSER \
+            -v $GITHUB_WORKSPACE/playwright-report-chromium:/app/playwright-report-chromium \
             test-automation-ui-pw \
             npx playwright test --project=$BROWSER || true
 
