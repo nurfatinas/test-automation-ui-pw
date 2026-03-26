@@ -1,5 +1,5 @@
 {
-  "name": "test_automation_pw",
+  "name": "test_automation_ui_pw",
   "version": "1.0.0",
   "scripts": {
     "test": "npx playwright test",
