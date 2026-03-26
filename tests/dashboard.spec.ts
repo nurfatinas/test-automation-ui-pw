@@ -7,7 +7,7 @@ test('Dashboard loads and title is correct', async ({ page }) => {
 
   const title = await dashboard.getTitle();
   console.log('Page title:', title);
-  // await expect(page).toHaveTitle(/Sauce/i);
+  expect(title).toContain('Sauce Demo');
 
   await dashboard.captureScreenshot('dashboard_home');
   
