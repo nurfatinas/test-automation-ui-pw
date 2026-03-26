@@ -5,7 +5,9 @@ export default defineConfig({
   testMatch: /.*\.spec\.ts/,
   timeout: 30000,
   retries: 1,
-  reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]],
+  reporter: [
+    ['html', { outputFolder: `playwright-report-${process.env.BROWSER || 'default'}`, open: 'never' }]
+  ],
   use: {
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
