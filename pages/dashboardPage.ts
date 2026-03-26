@@ -1,4 +1,6 @@
 import { Page } from '@playwright/test';
+import { config } from '../config/config';
+import { takeScreenshot } from '../utils/helpers';
 
 export class DashboardPage {
   readonly page: Page;
@@ -8,10 +10,15 @@ export class DashboardPage {
   }
 
   async goto() {
-    await this.page.goto('https://sauce-demo.myshopify.com/');
+    await this.page.goto(config.baseURL);
   }
 
   async getTitle() {
     return this.page.title();
   }
+
+  async captureScreenshot(name: string) {
+    await takeScreenshot(this.page, name);
+  }
+
 }
